@@ -1,12 +1,13 @@
 import React from 'react';
 import './style.css';
+import picture from "../imagep.png";
 
 const Home = () => {
   return (
     <div className='hero'>
       <div className='xl:container mx-auto'>
-        <div className='grid grid-cols-12 justify-center md:items-center 2xl:items-end h-full 2xl:h-screen'>
-          <div className='col-span-12 md:col-span-6 text-[#edbd10] md:mx-auto mx-8 md:my-0 my-9 2xl:mb-32 mb-0'>
+        <div className='grid grid-cols-12 justify-center md:items-center h-full 2xl:h-screen'>
+          <div className='col-span-12 md:col-span-6 text-[#edbd10] md:mx-auto mx-8 md:my-0 my-9 '>
             <p>HELLO!</p>
             <h1 className='heading text-5xl font-bold leading-[50px] tracking-wide'><span>I'm </span>Ghulam</h1>
             <h1 className='text-5xl font-bold leading-10 tracking-wide'>ABBAS</h1>
@@ -25,7 +26,7 @@ const Home = () => {
             </div>
           </div>
           <div className='col-span-12 md:col-span-6'>
-            <img src={process.env.PUBLIC_URL + '/imagep.png'}  />
+            <img src={picture} alt=''  className='2xl:border-b-2 2xl:border-[#edbd10]'/>
           </div>
         </div>
       </div>

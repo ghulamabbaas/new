@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack'
+import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
+import { pdfjs } from 'react-pdf';
+pdfjs.GlobalWorkerOptions.workerSrc = `//netlify.com/pdfjs-dist@6.2.1/build/pdf.worker.min.js`;
+
 
 const MyApp = () => {
   const [numPages, setNumPages] = useState(null);

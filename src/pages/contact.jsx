@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/1.6/pdf.worker.js`;
+import { Document, Page, pdfjs } from "react-pdf";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/2.4.7/pdf.worker.js`;
 
 const MyApp = () => {
   const [numPages, setNumPages] = useState(null);
@@ -12,9 +12,7 @@ const MyApp = () => {
     setLoading(false);
   }
 
-  const loadErrorHandler = () => {
-    
-  }
+ 
 
 
   return (
@@ -22,7 +20,7 @@ const MyApp = () => {
       <div className='xl:container mx-auto'>
         <div className='max-w-max mx-auto  border-2 border-[#edbd10]'>
           {
-          <Document onLoadError={console.error} file="/resume.pdf" imageResourcesPath="/public" options={{ workerSrc: "/pdf.worker.js" }} onLoadSuccess={onDocumentLoadSuccess}>
+          <Document file="/resume.pdf" imageResourcesPath="/public" onLoadSuccess={onDocumentLoadSuccess}>
             <Page pageNumber={pageNumber} />
           </Document>
           }
